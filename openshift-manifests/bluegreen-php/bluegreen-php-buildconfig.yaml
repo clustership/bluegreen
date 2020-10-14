@@ -32,5 +32,4 @@ spec:
       secret: m8VtljB-SLDML7HT2RBs
     type: Generic
   - type: ConfigChange
-  - imageChange:
-    type: ImageChange
+  - type: ImageChange
