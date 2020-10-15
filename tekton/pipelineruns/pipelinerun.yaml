@@ -1,0 +1,20 @@
+apiVersion: tekton.dev/v1beta1 
+kind: PipelineRun 
+metadata:
+  name: build-api-pipelinerun-quay
+spec:
+  pipelineRef:
+    name: fetch-and-build
+  params: 
+  - name: git-revision
+    value: main
+  - name: git-url
+    value: https://github.com/clustership/bluegreen.git
+  - name: builded-image
+    value: quay.io/xymox/bluegreen-ci
+  - name: repo-tlsverify
+    value: "false"
+  workspaces: 
+  - name: shared-workspace
+    persistentvolumeclaim:
+      claimName: pipeline-storage
