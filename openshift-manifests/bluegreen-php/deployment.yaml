@@ -31,6 +31,6 @@ spec:
           protocol: TCP
         env:
         - name: COLOR
-          value: green
+          value: blue
         resources: {}	
         terminationMessagePath: /dev/termination-log	
