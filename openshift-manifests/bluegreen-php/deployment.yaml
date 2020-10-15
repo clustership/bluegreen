@@ -4,7 +4,7 @@ metadata:
   labels:
     app: bluegreen
   annotations:
-    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"bluegree:bluegreen-ci"},"fieldPath":"spec.template.spec.containers[?(@.name==\"bluegreen\")].image"}]'
+    image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"bluegreen:bluegreen-ci"},"fieldPath":"spec.template.spec.containers[?(@.name==\"bluegreen\")].image"}]'
     argocd.argoproj.io/sync-options: Validate=false
     argocd.argoproj.io/sync-wave: "5"
   name: bluegreen
