@@ -5,6 +5,7 @@ metadata:
     app: bluegreen
   annotations:
     image.openshift.io/triggers: '[{"from":{"kind":"ImageStreamTag","name":"bluegreen-ci:latest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"bluegreen\")].image"}]'
+    argocd.argoproj.io/sync-wave: "5"
   name: bluegreen
 spec:
   replicas: 1
@@ -20,7 +21,7 @@ spec:
     spec:
       containers:
       - name: bluegreen
-        image: ' '
+        image: bluegreen-ci:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

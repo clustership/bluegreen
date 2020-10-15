@@ -3,6 +3,8 @@ kind: Route
 metadata:
   labels:
     app: bluegreen
+  annotations:
+    argocd.argoproj.io/sync-wave: "10"
   name: bluegreen
 spec:
   port:
